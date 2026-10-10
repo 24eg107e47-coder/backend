@@ -4,12 +4,18 @@ import com.campusfix.backend.model.Complaint;
 import com.campusfix.backend.repository.ComplaintRepository;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/complaints")
-@CrossOrigin(origins = "http://localhost:5173","https://24EG107E47.netlify.app")
+
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://24EG107E47.netlify.app"
+})
+
 public class ComplaintController {
 
     private final ComplaintRepository complaintRepository;
