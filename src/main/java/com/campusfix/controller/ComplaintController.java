@@ -13,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = {
     "http://localhost:5173",
-    "https://24EG107E47.netlify.app"
+    "https://24eg107e47.netlify.app"
 })
 
 public class ComplaintController {
