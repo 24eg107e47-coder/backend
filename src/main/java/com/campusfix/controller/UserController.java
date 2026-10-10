@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:5173","https://24EG107E47.netlify.app")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://24EG107E47.netlify.app"
+})
 public class UserController {
 
     private final UserRepository userRepository;
