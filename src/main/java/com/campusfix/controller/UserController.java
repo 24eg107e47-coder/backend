@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody User user) {
 
-        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+        if (userRepository.findFirstByUsername(user.getUsername()).isPresent()) {
             return ResponseEntity.badRequest().body("Username already exists");
         }
 
@@ -37,7 +37,7 @@ public class UserController {
     public ResponseEntity<?> login(@RequestBody User user) {
 
         User existingUser = userRepository
-                .findByUsername(user.getUsername())
+                .findFirstByUsername(user.getUsername())
                 .orElse(null);
 
         if (existingUser == null) {
